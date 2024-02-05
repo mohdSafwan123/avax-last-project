@@ -1,0 +1,167 @@
+body {
+  background-color: #606c38;
+  color: white;
+  font-family: 'Arial', sans-serif; /* Choose a suitable font */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.btnConnect {
+  all: unset;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.6em 2em;
+  border: mediumspringgreen solid 0.15em;
+  border-radius: 0.25em;
+  color: mediumspringgreen;
+  font-size: 1.5em;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border 300ms, color 300ms;
+  user-select: none;
+}
+
+.btnConnect p {
+  z-index: 1;
+}
+
+.btnConnect:hover {
+  color: #212121;
+}
+
+.btnConnect:active {
+  border-color: teal;
+}
+
+.btnConnect::after, .btnConnect::before {
+  content: "";
+  position: absolute;
+  width: 9em;
+  aspect-ratio: 1;
+  background: mediumspringgreen;
+  opacity: 50%;
+  border-radius: 50%;
+  transition: transform 500ms, background 300ms;
+}
+
+.btnConnect::before {
+  left: 0;
+  transform: translateX(-8em);
+}
+
+.btnConnect::after {
+  right: 0;
+  transform: translateX(8em);
+}
+
+.btnConnect:hover:before {
+  transform: translateX(-1em);
+}
+
+.btnConnect:hover:after {
+  transform: translateX(1em);
+}
+
+.btnConnect:active:before,
+.btnConnect:active:after {
+  background: teal;
+}
+
+#accountAddress {
+  margin-top: 1rem;
+}
+
+#writeContent,
+#readContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-top: 2rem; */
+}
+
+
+
+.inputBox {
+  background-color: #212121;
+  /* max-width: 190px; */
+  width: 340px;
+  height: 40px;
+  padding: 10px;
+  /* text-align: center; */
+  border: 2px solid white;
+  border-radius: 5px;
+  /* box-shadow: 3px 3px 2px rgb(249, 255, 85); */
+}
+
+.inputBox:focus {
+  color: rgb(0, 255, 255);
+  background-color: #212121;
+  outline-color: rgb(0, 255, 255);
+  box-shadow: -3px -3px 15px rgb(0, 255, 255);
+  transition: .1s;
+  transition-property: box-shadow;
+}
+
+/* .writeButton, */
+
+.writeButton {
+  padding: 0.6em 1em;
+  border: 4px solid #fa725a;
+  transition: ease-in-out 0.3s;
+  background-color: transparent;
+  color: #fa725a;
+  font-weight: bolder;
+  font-size: 16px;
+ }
+ 
+ .writeButton:hover {
+  transform: scale(1.2) rotate(10deg);
+  background-color: #fa725a;
+  color: white;
+ }
+/* .readButton {
+  margin-top: 1.5rem;
+} */
+
+.readButton {
+  width: 165px;
+  height: 62px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 17px;
+  border-radius: 1rem;
+  border: none;
+  position: relative;
+  background: #100720;
+  transition: 0.1s;
+}
+
+.readButton::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2% );
+  filter: blur(15px);
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.readButton:active {
+  transform: scale(0.9) rotate(3deg);
+  background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2% );
+  transition: 0.5s;
+}
+
+/* Rest of your styles remain the same */
